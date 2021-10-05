@@ -1,0 +1,17 @@
+{
+  "name": "DiscordJS13-Command-Handler",
+  "version": "v1.0.0",
+  "description": "Simple DiscordJS v13 slash command handler",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^13.1.0",
+    "fs": "^0.0.1-security"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}
