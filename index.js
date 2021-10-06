@@ -3,9 +3,7 @@ const config = require('./config.json'); const fs = require('fs');
 const client = new Client({ intents: 32767 }); 
 client.login(config.token).then(x => console.log('READY !!'+ client.user.username) );  
 
-
-client.commands = new Collection();
-let slashcommands = [];
+client.commands = new Collection(); let slashcommands = [];
 
 const slashCommandFile = fs.readdirSync(`./Command`).filter((files) => files.endsWith(".js"));
   for (const file of slashCommandFile) {
@@ -14,7 +12,7 @@ const slashCommandFile = fs.readdirSync(`./Command`).filter((files) => files.end
       if(!slashCommand.description) return console.error(`SlashCommand (Description) Error: ${slashCommand.description.slice(prefix.length).trim().split(' ')[0]} Komut açıklaması girmelisin.`);
       client.commands.set(slashCommand.name, slashCommand); console.log(`Client (/) Command Loaded: ${slashCommand.name}`);
       slashcommands.push(slashCommand);
-   }; 
+}; 
  
 client.on('interactionCreate', (interaction) => {
   if(!interaction.isCommand()) return;
